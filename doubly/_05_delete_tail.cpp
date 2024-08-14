@@ -76,7 +76,7 @@ int main()
     }
     cout << "Print All Element: ";
     printingList(head);
-    cout << "After delete Head: ";
+    cout << "After delete Tail: ";
     deleteTail(head, tail);
     printingList(head);
     cout << "Print reverse order: ";

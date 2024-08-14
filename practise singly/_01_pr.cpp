@@ -11,28 +11,31 @@ class Node
         this->next = NULL;
     }
 };
-int size(Node *head, int val)
-{
+int sz = 0;
+void insertAtTail(Node * &head, int val){
     Node *newNode = new Node(val);
-    Node *tmp = head;
-    int size = 0;
-    while (tmp != NULL)
-    {
-        size++;
+    sz++;
+    if(head == NULL){
+        head = newNode;
+        return;
     }
-    return size;
+    Node *temp = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = newNode;
     
 }
 int main()
 {
     Node *head = NULL;
     int val;
-    int sz;
     while (true)
     {
         cin >> val;
         if(val == -1) break;
-        sz = size(head, val);
+        insertAtTail(head, val);
     }
     cout << sz;
     return 0;
